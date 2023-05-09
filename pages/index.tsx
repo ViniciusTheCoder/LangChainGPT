@@ -25,7 +25,7 @@ export default function Home() {
   }>({
     messages: [
       {
-        message: 'Olá!!! Eu sou a Fran, diva virtual da Furukawa Solutions. Por favor me pergunte qualquer coisa sobre os produtos Furukawa! :)',
+        message: 'Olá!!! Eu sou a Fran, diva virtual da Furukawa Solutions. Por favor me pergunte qualquer coisa sobre os produtos Furukawa! 😄',
         type: 'apiMessage',
       },
     ],
