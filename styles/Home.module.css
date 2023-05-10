@@ -23,7 +23,7 @@
   resize: none;
   font-size: 1.1rem;
   padding: 1rem 2rem 1rem 2rem;
-  width: 75vw;
+  width: 60vw;
   border-radius: 0.5rem;
   border: 1px solid #d9d9e3;
   background: #151d3d;
@@ -37,12 +37,16 @@
 
 .textarea:focus {
   outline: none;
-  border-color: #6b7280;
-  box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.5);
+  border-color: #EF4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.5);
 }
 
 .textarea::placeholder {
   color: #fff;
+}
+
+.textarea:focus-visible::placeholder{
+  color: #EF4444;
 }
 
 .generatebutton {
@@ -95,9 +99,17 @@
 }
 
 .usermessage {
-  background: #ffffff;
+  width: 50%;
+  display: inline-block;
+  background: #3a68a3ff;
   padding: 1.5rem;
-  color: #000;
+  color: #FFF;
+  border-radius: 25px;
+  word-wrap: break-word;
+  overflow: hidden;
+  margin-right: 20px;
+  margin-top: 10px;
+  margin-left: 550px;
 }
 
 .usermessagewaiting {
@@ -121,10 +133,17 @@
 }
 
 .apimessage {
-  background: #f9fafb;
+  width: 50%;
+  background: #1d2c4dff;
+  backdrop-filter: blur(10px);
   padding: 1.5rem;
-  color: #000;
-  animation: fadein 0.5s;
+  border-radius: 25px;
+  margin-left: 20px;
+  margin-top: 10px;
+  word-wrap: break-word;
+  overflow: hidden;
+  color: #fff;
+  animation: fadein 2s;
 }
 
 @keyframes fadein {
@@ -169,7 +188,7 @@
 .boticon,
 .usericon {
   margin-right: 1rem;
-  border-radius: 0.1rem;
+  border-radius: 0.5rem;
   height: 100%;
 }
 
@@ -189,14 +208,16 @@
 }
 
 .cloud {
-  width: 75vw;
+  width: 60vw;
   height: 65vh;
   background: #ffffff;
-  border-radius: 0.5rem;
-  border: 1px solid #d9d9e3;
+  border-radius: 0.3rem;
+  border: 1px solid #fff;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
 }
 
 .pointsnormal {

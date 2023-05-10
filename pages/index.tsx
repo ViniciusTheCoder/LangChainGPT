@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, use } from 'react';
 import Layout from '@/components/layout';
 import styles from '@/styles/Home.module.css';
 import { Message } from '@/types/chat';
@@ -25,7 +25,7 @@ export default function Home() {
   }>({
     messages: [
       {
-        message: 'Olá!!! Eu sou a Fran, diva virtual da Furukawa Solutions. Por favor me pergunte qualquer coisa sobre os produtos Furukawa! :)',
+        message: 'Olá!!! Eu sou a Fran, diva virtual da Furukawa Solutions. Por favor me pergunte qualquer coisa sobre os produtos Furukawa! 😄',
         type: 'apiMessage',
       },
     ],
@@ -36,10 +36,6 @@ export default function Home() {
 
   const messageListRef = useRef<HTMLDivElement>(null);
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
-
-  useEffect(() => {
-    textAreaRef.current?.focus();
-  }, []);
 
   async function handleSubmit(e: any) {
     e.preventDefault();
@@ -104,7 +100,7 @@ export default function Home() {
       messageListRef.current?.scrollTo(0, messageListRef.current.scrollHeight);
     } catch (error) {
       setLoading(false);
-      setError('An error occurred while fetching the data. Please try again.');
+      setError('Um erro ocorreu enquanto eu estava digitando 😔. Por favor, pergunte novamente!');
       console.log('error', error);
     }
   }
@@ -120,7 +116,7 @@ export default function Home() {
   return (
     <>
       <Layout>
-        <div className="mx-auto flex flex-col gap-4">
+      <div className="mx-auto flex flex-col gap-4">
           <main className={styles.main}>
             <div className={styles.cloud}>
               <div ref={messageListRef} className={styles.messagelist}>
@@ -131,7 +127,7 @@ export default function Home() {
                     icon = (
                       <Image
                         key={index}
-                        src="/fran.jpg"
+                        src="/fran_smile_icon.jpg"
                         alt="AI"
                         width="40"
                         height="40"
@@ -228,6 +224,7 @@ export default function Home() {
                     type="submit"
                     disabled={loading}
                     className={styles.generatebutton}
+                    id='submit'
                   >
                     {loading ? (
                       <div className={styles.loadingwheel}>
@@ -254,7 +251,7 @@ export default function Home() {
             )}
           </main>
         </div>
-        <footer className="m-auto p-4 border-t-2 border-t-red-500">
+        <footer className="m-auto p-4 border-t-2 border-t-red-500 pt-4 mt-16">
             <span className='text-white'>Powered by </span> <span className='text-red-500'>Furukawa Solutions.</span>
         </footer>
       </Layout>
