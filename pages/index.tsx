@@ -101,7 +101,6 @@ export default function Home() {
 
       setLoading(false);
 
-      //scroll to bottom
       messageListRef.current?.scrollTo(0, messageListRef.current.scrollHeight);
     } catch (error) {
       setLoading(false);
