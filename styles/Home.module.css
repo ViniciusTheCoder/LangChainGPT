@@ -37,8 +37,8 @@
 
 .textarea:focus {
   outline: none;
-  border-color: #EF4444;
-  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.5);
+  border-color: #6b7280;
+  box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.5);
 }
 
 .textarea::placeholder {
@@ -46,7 +46,7 @@
 }
 
 .textarea:focus-visible::placeholder{
-  color: #EF4444;
+  color: #fff;
 }
 
 .generatebutton {
@@ -71,6 +71,10 @@
   width: 1.2em;
   height: 1.2em;
   fill: currentColor;
+}
+
+.svgicon:hover {
+  color: #EF4444;
 }
 
 .generatebutton:hover {
@@ -99,17 +103,10 @@
 }
 
 .usermessage {
-  width: 50%;
   display: inline-block;
-  background: #3a68a3ff;
+  background: transparent;
   padding: 1.5rem;
   color: #FFF;
-  border-radius: 25px;
-  word-wrap: break-word;
-  overflow: hidden;
-  margin-right: 20px;
-  margin-top: 10px;
-  margin-left: 550px;
 }
 
 .usermessagewaiting {
@@ -133,15 +130,8 @@
 }
 
 .apimessage {
-  width: 50%;
   background: #1d2c4dff;
-  backdrop-filter: blur(10px);
   padding: 1.5rem;
-  border-radius: 25px;
-  margin-left: 20px;
-  margin-top: 10px;
-  word-wrap: break-word;
-  overflow: hidden;
   color: #fff;
   animation: fadein 2s;
 }
