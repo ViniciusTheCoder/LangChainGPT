@@ -5,6 +5,13 @@ import { pinecone } from '@/utils/pinecone-client';
 import { CustomPDFLoader } from '@/utils/customPDFLoader';
 import { PINECONE_INDEX_NAME, PINECONE_NAME_SPACE } from '@/config/pinecone';
 import { DirectoryLoader } from 'langchain/document_loaders/fs/directory';
+import {
+  JSONLoader,
+  JSONLinesLoader,
+} from 'langchain/document_loaders/fs/json';
+import { TextLoader } from 'langchain/document_loaders/fs/text';
+import { CSVLoader } from 'langchain/document_loaders/fs/csv';
+import { DocxLoader } from 'langchain/document_loaders/fs/docx';
 
 const filePath = 'docs';
 
@@ -13,7 +20,12 @@ export const run = async () => {
     
     const directoryLoader = new DirectoryLoader(filePath, {
       '.pdf': (path) => new CustomPDFLoader(path),
-    });
+      '.txt': (path) => new TextLoader(path),
+      '.csv': (path) => new CSVLoader (path, 'text'),
+      '.docx': (path) => new DocxLoader (path),
+      '.json': (path) => new JSONLoader (path, '/texts'),
+      '.jsonl': (path) => new JSONLinesLoader (path, '/html'),
+        });
 
     const rawDocs = await directoryLoader.load();
 
