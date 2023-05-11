@@ -19,7 +19,7 @@ Helpful answer in markdown:`;
 export const makeChain = (vectorstore: PineconeStore) => {
   const model = new OpenAI({
     temperature: 0, 
-    modelName: 'gpt-3.5-turbo', 
+    modelName: 'gpt-3.5-turbo',
   });
 
   const chain = ConversationalRetrievalQAChain.fromLLM(

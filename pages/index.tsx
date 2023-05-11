@@ -140,10 +140,10 @@ export default function Home() {
                     icon = (
                       <Image
                         key={index}
-                        src="/usericon.png"
+                        src="/me.png"
                         alt="Me"
-                        width="30"
-                        height="30"
+                        width="25"
+                        height="25"
                         className={styles.usericon}
                         priority
                       />
