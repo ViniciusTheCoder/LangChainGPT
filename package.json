@@ -26,7 +26,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-markdown": "^8.0.5",
-    "tailwind-merge": "^1.10.0"
+    "tailwind-merge": "^1.10.0",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@types/node": "^18.14.6",
