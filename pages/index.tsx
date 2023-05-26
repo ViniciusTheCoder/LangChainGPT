@@ -25,7 +25,7 @@ export default function Home() {
   }>({
     messages: [
       {
-        message: 'Olá!!! Eu sou a Fran, diva virtual da Furukawa Solutions. Por favor me pergunte qualquer coisa sobre os produtos Furukawa! 😄',
+        message: 'Olá!!! Eu sou a Fran, assistente virtual da Furukawa Solutions. Por favor me pergunte qualquer coisa sobre os produtos Furukawa! 😄',
         type: 'apiMessage',
       },
     ],
@@ -36,6 +36,10 @@ export default function Home() {
 
   const messageListRef = useRef<HTMLDivElement>(null);
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => {
+    messageListRef.current?.scrollTo(0, messageListRef.current.scrollHeight);
+  }, [messages]);
 
   async function handleSubmit(e: any) {
     e.preventDefault();
@@ -97,7 +101,7 @@ export default function Home() {
 
       setLoading(false);
 
-      messageListRef.current?.scrollTo(0, messageListRef.current.scrollHeight);
+
     } catch (error) {
       setLoading(false);
       setError('Um erro ocorreu enquanto eu estava digitando 😔. Por favor, pergunte novamente!');
@@ -178,14 +182,16 @@ export default function Home() {
                               <div key={`messageSourceDocs-${index}`}>
                                 <AccordionItem value={`item-${index}`}>
                                   <AccordionTrigger>
-                                    <h3>Source {index + 1}</h3>
+                                    <h3 className='text-white'>Source {index + 1}</h3>
                                   </AccordionTrigger>
                                   <AccordionContent>
+                                    <span className='text-white'>
                                     <ReactMarkdown linkTarget="_blank">
-                                      {doc.pageContent}
+                                     {doc.pageContent} 
                                     </ReactMarkdown>
+                                    </span>
                                     <p className="mt-2">
-                                      <b>Source:</b> {doc.metadata.source}
+                                      <b className='text-white'>Source:</b><span className='text-white'> {doc.metadata.source} </span>
                                     </p>
                                   </AccordionContent>
                                 </AccordionItem>
